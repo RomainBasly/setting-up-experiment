@@ -1,0 +1,11 @@
+@import '@fontsource/mukta/index.css';
+@import '@fontsource/cairo/index.css';
+@import '@fontsource/eb-garamond/index.css';
+
+body {
+  background-color: #0a1128;
+}
+
+.root {
+  margin: 0;
+}
