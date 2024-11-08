@@ -1,14 +1,14 @@
 import { FaTimes } from 'react-icons/fa'
-import { ExternalLink } from 'react-external-link'
 import './index.css'
-import { useStore } from '@nanostores/react'
-import { isNavBarOpen } from '../../../utils'
+import { useSideBar } from '../../../hooks/useSideBar'
 
-function Sidebar({ toggle }: Readonly<{ toggle: () => void }>) {
-  const $isNavBarOpen = useStore(isNavBarOpen)
+function Sidebar() {
+  // do the logic for opening the sideBar
+  const { isSideBarOpen, toggle } = useSideBar()
+
   return (
     <aside
-      className={`sidebar-container ${$isNavBarOpen ? 'open' : 'closed'}`}
+      className={`sidebar-container ${isSideBarOpen ? 'open' : 'closed'}`}
       onClick={toggle}
     >
       <div className="icon">
@@ -18,12 +18,7 @@ function Sidebar({ toggle }: Readonly<{ toggle: () => void }>) {
         <ul className="sidebar-menu">
           <li>
             <a href="/" className="sidebar-link">
-              Blog
-            </a>
-          </li>
-          <li>
-            <a href="/about" className="sidebar-link">
-              About
+              Home
             </a>
           </li>
           <li>
@@ -37,14 +32,14 @@ function Sidebar({ toggle }: Readonly<{ toggle: () => void }>) {
             </a>
           </li>
           <li>
-            <ExternalLink
+            <a
               href="https://adatechschool.fr/entreprise/"
               target="_blank"
               rel="noopener noreferrer"
               className="sidebar-external"
             >
               Ada Tech School
-            </ExternalLink>
+            </a>
           </li>
         </ul>
         <div className="side-btn-wrap"></div>

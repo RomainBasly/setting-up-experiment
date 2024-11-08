@@ -1,17 +1,18 @@
+import React from 'react'
 import './index.css'
 
 const ContactMe = () => {
   return (
     <div id="contact" className="container-contact">
       <p className="greetings">
-        <span style={{ color: '#FF5C39', fontWeight: '400' }}>3. </span> What's
-        next?
+        <span style={{ color: '#FF5C39', fontWeight: '400' }}>3. </span>{' '}
+        What&apos;s next?
       </p>
       <h4 className="get-in-touch">Get In Touch</h4>
       <p className="paragraph-contact">
-        If you have a comment, there's an opportunity in your network, or you
-        just want to share with me good tips: please do not hesitate to contact
-        me!
+        If you have a comment, there&apos;s an opportunity in your network, or
+        you just want to share with me good tips: please do not hesitate to
+        contact me!
       </p>
       <a
         className="contact-me-container"

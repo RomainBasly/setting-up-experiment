@@ -1,4 +1,4 @@
-import Image from '../../../Assets/Images/RB-photo.jpg'
+import Image from '../../../assets/Images/RB-photo.jpg'
 import './index.css'
 
 const AboutMeComponent = () => {
@@ -109,7 +109,7 @@ const AboutMeComponent = () => {
         </div>
         <div className="images-container">
           <div className="cadre"></div>
-          <img src={Image.src} className="photo" alt="picture of a gentleman" />
+          <img src={Image} className="photo" alt="gentleman" />
         </div>
       </div>
     </div>

@@ -1,4 +1,5 @@
-import Image from '../../../Assets/Images/RB-photo.jpg'
+import ImageSrc from '/public/assets/Images/RB-photo.jpg'
+import Image from 'next/image'
 import './index.css'
 
 const AboutMeComponent = () => {
@@ -44,8 +45,8 @@ const AboutMeComponent = () => {
             I worked on several
             <span style={{ color: '#FF5C39', marginLeft: '3px' }}>
               web solutions
-            </span>{' '}
-            that simplify users' day-to-day activities:
+            </span>
+            {`that simplify users' day-to-day activities:`}
             <li className="project-details">
               Never forget your grocery lists at home! With
               <a
@@ -70,7 +71,7 @@ const AboutMeComponent = () => {
                 sharing
               </span>{' '}
               of lists with your relatives (groceries, books, movies, etc.). And
-              good news, it's available on your{' '}
+              good news, it&apos;s available on your{' '}
               <span style={{ color: '#FF5C39', margin: '0px 3px' }}>
                 mobile phone
               </span>{' '}
@@ -109,7 +110,13 @@ const AboutMeComponent = () => {
         </div>
         <div className="images-container">
           <div className="cadre"></div>
-          <img src={Image.src} className="photo" alt="picture of a gentleman" />
+          <Image
+            src={ImageSrc.src}
+            className="photo"
+            alt="gentleman"
+            width="200"
+            height="200"
+          />
         </div>
       </div>
     </div>

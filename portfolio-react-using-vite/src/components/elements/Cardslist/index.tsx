@@ -1,5 +1,5 @@
-import Card from './Card/index.tsx'
-import data from '../../../Assets/Projects/projects.json'
+import Card from './Card/'
+import data from '../Projects/projects.json'
 import './index.css'
 
 export const CardsList = () => {

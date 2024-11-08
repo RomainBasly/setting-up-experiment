@@ -1,4 +1,7 @@
 .logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   flex-wrap: wrap;
   position: fixed;
   left: 70px;
@@ -41,7 +44,6 @@
 }
 
 .line {
-  width: 50%;
   height: 125px;
   border-right: 1px solid white;
   margin-top: 10px;

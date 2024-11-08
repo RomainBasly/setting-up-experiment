@@ -40,7 +40,7 @@ const Navbar = () => {
           </div>
         </div>
         <div className="resume-container">
-          <a href="/CV/CV_Romain_Basly_septembre2024.pdf" download>
+          <a href="/assets/Images/image-resume.png" download>
             <button className="download-resume">Resume</button>
           </a>
         </div>

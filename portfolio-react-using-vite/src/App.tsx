@@ -1,34 +1,55 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import '@fontsource/eb-garamond/400.css'
+import '@fontsource/eb-garamond/500.css'
+import '@fontsource/eb-garamond/600.css'
+import '@fontsource/eb-garamond/700.css'
+import '@fontsource/eb-garamond/800.css'
+
+import '@fontsource/cairo/200.css'
+import '@fontsource/cairo/300.css'
+import '@fontsource/cairo/400.css'
+import '@fontsource/cairo/500.css'
+import '@fontsource/cairo/600.css'
+import '@fontsource/cairo/700.css'
+import '@fontsource/cairo/800.css'
+import '@fontsource/cairo/900.css'
+
+import '@fontsource/mukta/200.css'
+import '@fontsource/mukta/300.css'
+import '@fontsource/mukta/400.css'
+import '@fontsource/mukta/500.css'
+import '@fontsource/mukta/600.css'
+import '@fontsource/mukta/700.css'
+import '@fontsource/mukta/800.css'
+import { Routes, Route, BrowserRouter } from 'react-router-dom'
+import AboutMeComponent from './components/elements/AboutMe'
+import CardsList from './components/elements/Cardslist'
+import ContactMe from './components/elements/ContactMe'
+import Layout from './components/elements/Layout'
+import TopSection from './components/elements/TopSection'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <BrowserRouter>
+      <div className="root">
+        <Layout>
+          coucou
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  <TopSection />
+                  <AboutMeComponent />
+                </>
+              }
+            />
+            <Route path="/projects" element={<CardsList />} />
+            <Route path="/contact" element={<ContactMe />} />
+          </Routes>
+        </Layout>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </BrowserRouter>
   )
 }
 

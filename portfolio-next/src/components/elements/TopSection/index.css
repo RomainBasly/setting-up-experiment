@@ -107,7 +107,7 @@
   padding: 10px 15px;
   margin-top: 30px;
   font-family: 'Mukta', sans-serif;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   border-radius: 3px;
   color: #0a1128;
 }
@@ -117,4 +117,9 @@
   color: #ff5c39;
   background-color: #0a1128;
   border: 1px solid #ff5c39;
+}
+
+.buttons-container-about {
+  display: flex;
+  flex-direction: column;
 }

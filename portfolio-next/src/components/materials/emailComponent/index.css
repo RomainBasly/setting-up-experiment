@@ -1,5 +1,7 @@
 .container-email {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: fixed;
   right: 70px;
   bottom: 0;

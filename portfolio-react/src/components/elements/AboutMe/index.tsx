@@ -2,7 +2,6 @@ import Image from '../../../assets/Images/RB-photo.jpg'
 import './index.css'
 
 const AboutMeComponent = () => {
-  console.log('image', Image)
   return (
     <div id="about">
       <div className="title">

@@ -1,14 +1,16 @@
+'use client'
 import { FaTimes } from 'react-icons/fa'
-import { ExternalLink } from 'react-external-link'
 import './index.css'
-import { useStore } from '@nanostores/react'
-import { isNavBarOpen } from '../../../utils'
+import { useSideBar } from '../../../hooks/useSideBar'
+import Link from 'next/link'
 
-function Sidebar({ toggle }: Readonly<{ toggle: () => void }>) {
-  const $isNavBarOpen = useStore(isNavBarOpen)
+function Sidebar() {
+  // do the logic for opening the sideBar
+  const { isSideBarOpen, toggle } = useSideBar()
+
   return (
     <aside
-      className={`sidebar-container ${$isNavBarOpen ? 'open' : 'closed'}`}
+      className={`sidebar-container ${isSideBarOpen ? 'open' : 'closed'}`}
       onClick={toggle}
     >
       <div className="icon">
@@ -17,34 +19,29 @@ function Sidebar({ toggle }: Readonly<{ toggle: () => void }>) {
       <div className="sidebar-wrapper">
         <ul className="sidebar-menu">
           <li>
-            <a href="/" className="sidebar-link">
-              Blog
-            </a>
+            <Link href="/" className="sidebar-link">
+              Home
+            </Link>
           </li>
           <li>
-            <a href="/about" className="sidebar-link">
-              About
-            </a>
-          </li>
-          <li>
-            <a href="/projects" onClick={toggle} className="sidebar-link">
+            <Link href="/projects" onClick={toggle} className="sidebar-link">
               Projects
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/contact" onClick={toggle} className="sidebar-link">
+            <Link href="/contact" onClick={toggle} className="sidebar-link">
               Contact
-            </a>
+            </Link>
           </li>
           <li>
-            <ExternalLink
+            <a
               href="https://adatechschool.fr/entreprise/"
               target="_blank"
               rel="noopener noreferrer"
               className="sidebar-external"
             >
               Ada Tech School
-            </ExternalLink>
+            </a>
           </li>
         </ul>
         <div className="side-btn-wrap"></div>
