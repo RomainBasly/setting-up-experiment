@@ -3,6 +3,7 @@ import './index.css'
 import { FaBars } from 'react-icons/fa'
 import { ExternalLink } from 'react-external-link'
 import { useSideBar } from '../../../hooks/useSideBar'
+import MyImage from '../../../materials/image'
 
 const Navbar = () => {
   const { toggle } = useSideBar()
@@ -11,7 +12,16 @@ const Navbar = () => {
       <div className="navbar-container">
         <div className="nav-logo">
           <a href="/">
-            <img src={logo} alt="logo" />
+            <MyImage
+              image={{
+                src: logo,
+                alt: 'logo',
+                caption: '',
+                width: 50,
+                height: 50,
+                className: '',
+              }}
+            />
           </a>
         </div>
         <div className="mobile-icon">

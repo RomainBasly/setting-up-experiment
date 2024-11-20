@@ -1,4 +1,5 @@
 import Image from '../../../assets/Images/RB-photo.jpg'
+import MyImage from '../../materials/image'
 import './index.css'
 
 const AboutMeComponent = () => {
@@ -109,7 +110,16 @@ const AboutMeComponent = () => {
         </div>
         <div className="images-container">
           <div className="cadre"></div>
-          <img src={Image} className="photo" alt="gentleman" />
+          <MyImage
+            image={{
+              alt: 'gentleman',
+              height: 200,
+              src: Image,
+              width: 200,
+              caption: '',
+              className: 'photo',
+            }}
+          />
         </div>
       </div>
     </div>
