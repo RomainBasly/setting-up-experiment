@@ -4,18 +4,24 @@ interface Props {
 }
 
 const { title } = Astro.props;
-import "@fontsource/cairo/400.css";
-import "@fontsource/cairo/600.css";
+import "@fontsource/cairo/200.css";
+import "@fontsource/cairo/700.css";
 import "@fontsource/cairo/800.css";
 import "@fontsource/mukta/200.css";
 import "@fontsource/mukta/400.css";
-import "@fontsource/mukta/600.css";
-import "@fontsource/mukta/800.css";
-import "@fontsource-variable/eb-garamond"
-import '@fontsource-variable/dosis';
+import "@fontsource-variable/eb-garamond";
+import "@fontsource-variable/dosis";
 import NavBarContainer from "../components/elements/NavBarContainer";
 import SocialNetworks from "../components/materials/socialNetworks";
 import EmailComponent from "../components/materials/emailComponent";
+
+import ImageLogo from "../Assets/Images/Logo-blanc.png";
+import { getImage } from "astro:assets";
+const optimizedImage = await getImage({
+  src: ImageLogo,
+  width: 800,
+  height: 600,
+});
 ---
 
 <!doctype html>
@@ -30,7 +36,7 @@ import EmailComponent from "../components/materials/emailComponent";
   </head>
   <body>
     <slot />
-    <NavBarContainer client:load/>
+    <NavBarContainer client:load imageUrl={optimizedImage.src} />
     <SocialNetworks />
     <EmailComponent />
   </body>
@@ -46,9 +52,8 @@ import EmailComponent from "../components/materials/emailComponent";
       rgb(var(--accent-light)) 30%,
       white 60%
     );
-    font-family: 'Mukta', sans-serif;
+    font-family: "Mukta", sans-serif;
     font-weight: 200;
-    
   }
   html {
     background-color: #0a1128;
@@ -70,9 +75,10 @@ import EmailComponent from "../components/materials/emailComponent";
       Bitstream Vera Sans Mono,
       Courier New,
       monospace;
-      width: 100%;
+    width: 100%;
   }
-  h1, h2 {
+  h1,
+  h2 {
     color: #ff5c39;
     font-family: "Cairo", sans-serif;
     line-height: 1.2;
@@ -83,16 +89,17 @@ import EmailComponent from "../components/materials/emailComponent";
     }
   }
 
-  p, li {
+  p,
+  li {
     font-size: 24px;
     margin: 0;
 
-      @media screen and (max-width: 900px) {
-        font-size: 20px;
-      }
-      @media screen and (max-width: 650px) {
-        font-size: 18px;
-      }
+    @media screen and (max-width: 900px) {
+      font-size: 20px;
+    }
+    @media screen and (max-width: 650px) {
+      font-size: 18px;
+    }
   }
 
   strong {
@@ -119,4 +126,3 @@ import EmailComponent from "../components/materials/emailComponent";
     border: none;
   }
 </style>
-
